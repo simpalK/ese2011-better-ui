@@ -1,4 +1,7 @@
-<H1> ${user.userName}'s ${calendar.calName}, upcoming Events<H2>
+#{extends 'main.html' /}
+
+<H4> ${user.userName}'s ${calendar.calName}, upcoming Events<H4>
+
 #{if message}
 	<font color="red">${message}</font>
 #{/if}
@@ -8,3 +11,29 @@
 		${event.eventName} from ${event.startEventDate.format('dd.MM.yy HH:mm')} to ${event.endEventDate.format('dd.MM.yy HH:mm')}
 	</p>
 #{/list}
+<article id="eventform">
+#{form @Application.addEvent()}
+    <p>
+        <label for="eventStart">Start Date (dd.MM.yyyy HH.mm): </label>
+        <input type="text" name="eventStart" id="eventStart" />
+    </p>
+    <p>
+        <label for="eventEnd">End Date (dd.MM.yyyy HH.mm): </label>
+        <input type="text" name="eventEnd" id="eventEnd" />
+    </p>
+    <p>
+        <label for="eventName">Name of the Event: </label>
+        <input type="text"  name="eventName" id="eventName"></>
+    </p>
+    	<input type="hidden" name="userName" id="userName" value="${user.userName}" />
+    	<input type="hidden" name="calendarName" id="calendarName" value="${calendar.calName}" />
+    <p>
+    <p>
+    <label for="visibility">Visibility Public/private</label>
+	<input type="checkbox" name="visible" id="visibility" value="true"/>
+	</p>
+	<p>
+    <input type="submit" value="Submit your Event" />
+    </p>
+#{/form}
+</article>

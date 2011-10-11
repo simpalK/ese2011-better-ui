@@ -3,6 +3,7 @@ package controllers;
 import play.*;
 import play.mvc.*;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -11,16 +12,18 @@ import models.Calendar;
 
 public class Application extends Controller {
 
-    
+	
     public static void index() {
     	List<User> users = Database.getUsers();
         render(users);
     }
     
     public static void showCalendars(String username){
+    	
     	User user = Database.getUserByName(username);
     	List<Calendar> calendars = user.getUserCalendars();
     	render(user, calendars);
+    	
     }
     
     public static void showEvents(String username, String calendarname, String message){

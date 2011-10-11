@@ -81,10 +81,9 @@
 	#{/list}
 </ol>
 <ol>
-
-	#{list items:users, as:'user'}
-		<ol><a href=@{Application.showEvents(user.userName,user.userCalendars.get(0).calName,"AllEvents")}></a></ol>
-	#{/list}
+</article>
+<article id="eventdisplay">
+<p> events for this calendar are</p>
 #{list items:events, as:'event'}
 	<p>
 		${event.eventName} from ${event.startEventDate.format('dd.MM.yy HH:mm')} to ${event.endEventDate.format('dd.MM.yy HH:mm')}

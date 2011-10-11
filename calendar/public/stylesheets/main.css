@@ -26,6 +26,22 @@ article#comments {
 	left: 40em;
 	padding: 1em;
 }
+article#eventdisplay {
+	background: #F2F2FF;
+	position: absolute;
+	top: 20em;
+	width: 20em;
+	left: 40em;
+	padding: 1em;
+}
+article#eventform {
+	background: #F2F2FF;
+	position: fixed;
+	top: 10em;
+	width: 50em;
+	left: 10em;
+	padding: 2em;
+}
 .login {
 	position: fixed;
 	right:0;
@@ -64,16 +80,16 @@ nav ol li {
 }
 
 form p {
-	width: 30em;
+	width: 50em;
 	min-height: 2em;
 }
 form p label {
-	width: 25%;
-	display: block;
+	width: 20em;
+	display: normal;
 	float: left;
 }
 form p input {
-	width: 73%;
+	width: 30em;
 	float: right;
-	display: block;
+	display: normal;
 }
