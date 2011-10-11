@@ -1,0 +1,5 @@
+<H1> ${user.userName}'s Calendars <H2>
+
+#{list items:calendars, as:'calendar'}
+	<p><a href=@{Application.showEvents(user.userName, calendar.calName)}>${calendar.calName}</a></p>
+#{/list}

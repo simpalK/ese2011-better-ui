@@ -1,0 +1,10 @@
+<H1> ${user.userName}'s ${calendar.calName}, upcoming Events<H2>
+#{if message}
+	<font color="red">${message}</font>
+#{/if}
+
+#{list items:events, as:'event'}
+	<p>
+		${event.eventName} from ${event.startEventDate.format('dd.MM.yy HH:mm')} to ${event.endEventDate.format('dd.MM.yy HH:mm')}
+	</p>
+#{/list}
